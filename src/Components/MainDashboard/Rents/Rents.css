@@ -1,0 +1,11 @@
+.details-btn {
+    background: #275a53;
+    border-radius: 5px;
+    color: #fff;
+    border: none;
+    padding: .5rem 1rem;
+}
+
+.listings {
+    padding: .8rem;
+}

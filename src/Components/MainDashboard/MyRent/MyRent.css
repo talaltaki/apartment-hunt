@@ -1,0 +1,16 @@
+.list-area {
+    border-radius: 10px;
+    min-height: 80vh;
+}
+
+.table-head {
+    background-color: #f5f6fa;
+    margin: 1rem;
+    padding: .8rem;
+    border-radius: 5px;
+}
+
+.table-head h5 {
+    margin: 0;
+    color: rgb(105, 105, 105);
+}

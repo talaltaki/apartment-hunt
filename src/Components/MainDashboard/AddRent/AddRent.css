@@ -1,0 +1,43 @@
+.add-area {
+    border-radius: 10px;
+}
+
+.add-area label {
+    font-weight: 700;
+    width: 100%;
+    display: block;
+    margin-bottom: 0;
+    font-size: 1.1rem;
+}
+
+.add-area input {
+    border: 1px solid #c9c9c9;
+    border-radius: 5px;
+    padding: 0.5rem;
+    width: 100%;
+}
+
+.thumbnail {
+    visibility: hidden;
+    height: 0;
+    font-size: 0;
+    padding: 0;
+}
+
+.thumbnail-img {
+    width: 50%;
+    height: 2.6rem;
+    display: inline-block;
+    border: 1px solid #009444;
+    background: #00944536;
+    color: #009444;
+    border-radius: 5px;
+}
+
+.submit-btn {
+    background: #275a53;
+    border-radius: 5px;
+    color: #fff;
+    border: none;
+    padding: .5rem 1rem;
+}
