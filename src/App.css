@@ -10,11 +10,12 @@
 a.nav-link{
   padding: 5px 20px !important;
   font-weight: 400 !important;
-  font-size: 16px;
+  font-size: 16px !important;
 }
 a.nav-link:hover{
   background-color: #275A53;
   color: white !important;
+  font-weight: ;
 }
 
 .common-btn:hover{
