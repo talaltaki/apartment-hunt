@@ -16,8 +16,8 @@ const Home = () => {
             <Navbar/>
             <Banner/>
             <div style={{background: "#E5E5E5"}}>
-                <Services></Services>
                 <HouseRent></HouseRent>
+                <Services></Services>
             </div>
             <Footer/>
         </div>
