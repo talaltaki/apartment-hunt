@@ -19,17 +19,17 @@ const AddRent = () => {
                                 </label> <br />
                                 <label>
                                     No of Bed <br />
-                                    <input type="text" name="bed" placeholder="Enter No of Bed" required />
+                                    <input type="number" name="bed" placeholder="Enter No of Bed" required />
                                 </label> <br />
                                 <label>
                                     No of Bathroom <br />
-                                    <input type="text" name="bathroom" placeholder="Enter No of Bathroom" required />
+                                    <input type="number" name="bathroom" placeholder="Enter No of Bathroom" required />
                                 </label>
                             </Col>
                             <Col xs={6}>
                                 <label>
                                     Price <br />
-                                    <input type="text" name="price" placeholder="Enter Price" required />
+                                    <input type="number" name="price" placeholder="Enter Price" required />
                                 </label> <br />
                                 <label>
                                     Location <br />
