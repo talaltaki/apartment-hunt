@@ -7,7 +7,7 @@ const ServicesCard = ({ item }) => {
             <div className="img-container mb-3" >
                 <img src={img} alt="product img" className="img-fluid w-25" />
             </div>
-            <h5 class="card-title">{name}</h5>
+            <h5 className="card-title">{name}</h5>
             <p>{info}</p>
         </div>
     );
