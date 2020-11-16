@@ -7,21 +7,27 @@ import Home from './Components/Home/Home';
 import LoginMain from './Components/LoginMain/LoginMain';
 
 
-function App() {
+export const AllContext = createContext();
+
+const App = () => {
+  const [user, setUser] = useState(null);
+
   return (
-    <BrowserRouter>
-      <Switch>
-        <Route exact path="/">
-        <Home/>
-        </Route>
-        <Route path="/dashboard">
-          <Dashboard />
-        </Route>
-        <Route path="/login">
-          <LoginMain />
-        </Route>
-      </Switch>
-    </BrowserRouter>
+    <AllContext.Provider value={[user, setUser]}>
+      <BrowserRouter>
+        <Switch>
+          <Route exact path="/">
+            <Home/>
+          </Route>
+          <Route path="/dashboard">
+            <Dashboard />
+          </Route>
+          <Route path="/login">
+            <LoginMain />
+          </Route>
+        </Switch>
+      </BrowserRouter>
+    </AllContext.Provider>
   );
 }
 

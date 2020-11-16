@@ -1,4 +1,16 @@
 .listings div {
     width: 20%;
     margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+.listings select {
+    border: none;
+    text-align: center;
+    width: 70%;
+}
+
+.listings p {
+    margin: auto;
 }
