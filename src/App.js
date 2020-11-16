@@ -4,13 +4,11 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Dashboard from './Components/MainDashboard/Dashboard/Dashboard';
 import Home from './Components/Home/Home';
+import LoginMain from './Components/LoginMain/LoginMain';
 
-export const userContext = createContext();
 
 function App() {
-  const [signedUser, setSignedUser] = useState(userContext);
   return (
-    <userContext.Provider value={[]}>
     <BrowserRouter>
       <Switch>
         <Route exact path="/">
@@ -19,9 +17,11 @@ function App() {
         <Route path="/dashboard">
           <Dashboard />
         </Route>
+        <Route path="/login">
+          <LoginMain />
+        </Route>
       </Switch>
     </BrowserRouter>
-    </userContext.Provider>
   );
 }
 
