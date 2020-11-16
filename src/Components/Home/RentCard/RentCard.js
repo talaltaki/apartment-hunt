@@ -3,18 +3,18 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBath, faBed, faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons'
 const RentCard = ({ item }) => {
     console.log(item)
-    const { image, title, bathroom, bedroom, location, price } = item;
+    const { convertedThumbnail, title, bathroom, bed, location, price } = item;
     return (
         <div className="col-9 mx-auto col-md-6 col-lg-4 my-3">
             <div className="card">
                 <div className="img-container" >
-                    <img src={image} alt="product img" className="card-img-top" />
+                    <img src={`data:image/jpeg;base64,${convertedThumbnail.img}`} alt="product img" className="card-img-top" />
                 </div>
-                <div class="card-body pb-0">
-                    <h5 class="card-title">{title}</h5>
-    <p className="small mb-1"><FontAwesomeIcon icon={faMapMarkerAlt} /> <span>2</span>{location}</p>
+                <div className="card-body pb-0">
+                    <h5 className="card-title">{title}</h5>
+    <p className="small mb-1"><FontAwesomeIcon icon={faMapMarkerAlt} /> <span>{location}</span></p>
                     <div className="d-flex justify-content-between ">
-    <p className="small"><FontAwesomeIcon icon={faBed} /> <span>{bedroom}</span> Bedroom</p>
+    <p className="small"><FontAwesomeIcon icon={faBed} /> <span>{bed}</span> Bedroom</p>
     <p className="small"><FontAwesomeIcon icon={faBath} /> <span>{bathroom}</span> Bathroom</p>
 
                     </div>
@@ -29,3 +29,4 @@ const RentCard = ({ item }) => {
 };
 
 export default RentCard;
+// src={`data:image/jpeg;base64,${image.img}`}

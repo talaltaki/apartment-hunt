@@ -2,11 +2,18 @@ import React from 'react';
 
 const BannerContent = () => {
     return (
-        <div >
+        <div className="">
             <h1 className="text-capitalize mb-4">FIND YOUR HOUSE RENT</h1>
-            <form action="">
-                <input placeholder="Search" type="text" className="input-search"/> <button className=" common-btn ml-2 ">Search</button>
-            </form>
+            <form>
+  <div class="form-row d-flex justify-content-center">
+    <div class="col-9">
+      <input type="text" class="form-control form-control-m" placeholder="First name"/>
+    </div>
+    <div class="col mb-1">
+      <button className="btn btn-success px-4 ">Search</button>
+    </div>
+  </div>
+</form>
         </div>
     );
 };

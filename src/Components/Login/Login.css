@@ -40,3 +40,8 @@
     bottom: 10px;
     right: 10px;
 }
+
+.form-control-m {
+    margin-top: 2px !important;
+    padding: 10px 10px !important;
+}
