@@ -7,7 +7,7 @@ const BannerContent = () => {
             <form>
   <div class="form-row d-flex justify-content-center">
     <div class="col-9">
-      <input type="text" class="form-control" placeholder="First name"/>
+      <input type="text" class="form-control form-control-m" placeholder="First name"/>
     </div>
     <div class="col mb-1">
       <button className="btn btn-success px-4 ">Search</button>
