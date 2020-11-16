@@ -28,21 +28,21 @@ const Login = () => {
   if (userSubmit === "signUp") {
     user.password === user.confirmationPassword
       ? firebase
-          .auth()
-          .createUserWithEmailAndPassword(user.email, user.password)
-          .then((result) => {
-            setErrorConfirmation(false);
-            setUser({ ...user, signUpError: "" });
-            setSignedUp(true);
+        .auth()
+        .createUserWithEmailAndPassword(user.email, user.password)
+        .then((result) => {
+          setErrorConfirmation(false);
+          setUser({ ...user, signUpError: "" });
+          setSignedUp(true);
 
-            const currentUser = firebase.auth().currentUser;
-            currentUser.updateProfile({
-              displayName: `${user.fname} ${user.lname}`,
-            });
-          })
-          .catch((error) => {
-            setUser({ ...user, signUpError: error.message });
-          })
+          const currentUser = firebase.auth().currentUser;
+          currentUser.updateProfile({
+            displayName: `${user.fname} ${user.lname}`,
+          });
+        })
+        .catch((error) => {
+          setUser({ ...user, signUpError: error.message });
+        })
       : setErrorConfirmation(true);
   }
 
@@ -110,8 +110,8 @@ const Login = () => {
           {isSignedUp ? (
             <h5 className="font-weight-bolder">Login</h5>
           ) : (
-            <h5 className="font-weight-bolder">Create an account</h5>
-          )}
+              <h5 className="font-weight-bolder">Create an account</h5>
+            )}
 
           {!isSignedUp && (
             <div className="pt-3">
@@ -201,18 +201,18 @@ const Login = () => {
           {user.signInError ? (
             <small className="text-danger">{user.signInError}</small>
           ) : (
-            ""
-          )}
+              ""
+            )}
           {user.signupError ? (
             <small className="text-danger">{user.signUpError}</small>
           ) : (
-            ""
-          )}
+              ""
+            )}
           {errorConfirmation ? (
             <small className="text-danger"> Wrong Password</small>
           ) : (
-            ""
-          )}
+              ""
+            )}
           {isSignedUp ? (
             <input
               className="btn btn-block text-white"
@@ -223,15 +223,15 @@ const Login = () => {
               onClick={(event) => setUserSubmit(event.target.name)}
             />
           ) : (
-            <input
-              className="btn btn-block text-white mt-3"
-              style={{ backgroundColor: "#275A53" }}
-              name="SignUp"
-              type="submit"
-              value="Create an account"
-              onClick={(event) => setUserSubmit(event.target.name)}
-            />
-          )}
+              <input
+                className="btn btn-block text-white mt-3"
+                style={{ backgroundColor: "#275A53" }}
+                name="SignUp"
+                type="submit"
+                value="Create an account"
+                onClick={(event) => setUserSubmit(event.target.name)}
+              />
+            )}
         </div>
         {isSignedUp ? (
           <>
@@ -249,21 +249,21 @@ const Login = () => {
             </span>
           </>
         ) : (
-          <>
-            <span>Already have an account? </span>
-            <span
-              onClick={loginToggleHandler}
-              className="font-weight-bold"
-              style={{
-                borderBottom: "1px solid #275A53",
-                cursor: "pointer",
-                color: "#275A53",
-              }}
-            >
-              Login
+            <>
+              <span>Already have an account? </span>
+              <span
+                onClick={loginToggleHandler}
+                className="font-weight-bold"
+                style={{
+                  borderBottom: "1px solid #275A53",
+                  cursor: "pointer",
+                  color: "#275A53",
+                }}
+              >
+                Login
             </span>
-          </>
-        )}
+            </>
+          )}
       </form>
 
       <div style={{ width: "300px", margin: "auto" }}>

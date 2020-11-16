@@ -12,13 +12,36 @@ const HomeDetails = () => {
   const [details, setDetails] = React.useState();
 
   useEffect(() => {
-    fetch(`http://localhost:9999/details/${id}`)
-      .then(response => response.json())
+    fetch(`http://localhost:9999/house-details/${id}`)
+      .then(res => res.json())
       .then(data => {
         setDetails(data);
-        console.log(data)
       })
-  }, [id]);
+  }, []);
+
+  // const { title, price, bed, convertedThumbnail, bathroom, _id } = details;
+
+
+  // useEffect(() => {
+  //   fetch(`http://pure-inlet-20297.herokuapp.com/rent-house-collection`)
+  //     .then(res => res.json())
+  //     .then(data => {
+  //       const singleHouse = data.find(item => id === item._id);
+  //       if (singleHouse !== undefined) {
+  //         setSingleHouseDetails(singleHouse);
+  //         console.log(singleHouse, singleHouseDetails)
+  //       }
+  //     })
+  // }, []);
+
+
+
+  // useEffect(() => {
+  //   if (details) {
+  //     const singleHouse = details.find(item => id === item._id);
+  //     setSingleHouseDetails(singleHouse)
+  //   }
+  // }, []);
 
 
 
@@ -32,7 +55,7 @@ const HomeDetails = () => {
           <div className="col-md-8 col-12">
             <div>
               {/* <Images /> */}
-              {/* <img src={`data:image/jpeg;base64,${details[0].convertedThumbnail.img}`} alt="" /> */}
+              {/* <img src={`data:image/jpeg;base64,${convertedThumbnail.img}`} alt="" /> */}
             </div>
             <div>
               <h1>Family Apartment Three</h1>

@@ -1,7 +1,14 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import Logo from '../../Logo.png'
+import React, { useContext } from 'react';
+import { Link, useHistory } from 'react-router-dom';
+import { AllContext } from '../../App';
+import Logo from '../../Logo.png';
+
+
 const Navbar = () => {
+  const history = useHistory();
+  const [loggedIn, setLoggedIn] = useContext(AllContext);
+  // console.log(loggedIn);
+
   return (
     <div className="container">
       <nav className="navbar navbar-expand-lg  navbar-light">
@@ -31,8 +38,11 @@ const Navbar = () => {
               <Link className="nav-link " to="#">Contact</Link>
             </li>
             <li className="">
-              <button className="btn common-btn ml-3" >Login</button>
+              {
+                <button onClick={() => history.push('/login')} className="btn common-btn ml-3" >Login</button>
+              }
             </li>
+
           </ul>
         </div>
       </nav>
