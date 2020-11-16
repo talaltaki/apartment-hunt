@@ -29,7 +29,7 @@ const App = () => {
           <Route path="/dashboard">
             <Dashboard />
           </Route>
-          <Route path="/details">
+          <Route path="/details/:id">
             <HomeDetails />
           </Route>
           <Route path="/login">

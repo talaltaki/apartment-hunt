@@ -6,20 +6,16 @@ import HouseRent from '../HouseRent/HouseRent';
 import Services from '../Services/Services';
 
 
-
-
-
-
 const Home = () => {
     return (
         <div>
-            <Navbar/>
-            <Banner/>
-            <div style={{background: "#E5E5E5"}}>
+            <Navbar />
+            <Banner />
+            <div style={{ background: "#E5E5E5" }}>
                 <HouseRent></HouseRent>
                 <Services></Services>
             </div>
-            <Footer/>
+            <Footer />
         </div>
     );
 };
