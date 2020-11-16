@@ -1,5 +1,4 @@
 import React from 'react';
-import { Col, Row } from 'react-bootstrap';
 import Bookings from '../Bookings/Bookings';
 import './BookingList.css';
 
@@ -9,7 +8,7 @@ const BookingList = () => {
             <h2 className="bg-white py-3">My Rent</h2>
             <div className="rent-area m-3 bg-white">
                 <div className="p-3">
-                    <div className="table-head d-flex justify-content-center">
+                    <div className="table-head d-flex no-wrap justify-content-center">
                         <div>
                             <h5 className="text-center">Name</h5>
                         </div>
