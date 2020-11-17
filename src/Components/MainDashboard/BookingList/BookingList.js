@@ -3,6 +3,16 @@ import Bookings from '../Bookings/Bookings';
 import './BookingList.css';
 
 const BookingList = () => {
+    const [bookingData, setBookingData] = React.useState([]);
+
+    React.useEffect(() => {
+        fetch(`https://pure-inlet-20297.herokuapp.com/bookings`)
+            .then(res => res.json())
+            .then(data => {
+                setBookingData(data);
+            })
+    }, []);
+
     return (
         <React.Fragment>
             <h2 className="bg-white py-3">My Rent</h2>
@@ -25,8 +35,10 @@ const BookingList = () => {
                             <h5 className="text-center">Status</h5>
                         </div>
                     </div>
-                    {/* here I'll map when our backend wil be ready */}
-                    <Bookings />
+                    {
+                        bookingData.map(singleHouse => <Bookings singleHouse={singleHouse} key={singleHouse._id} />)
+                    }
+
                 </div>
             </div>
         </React.Fragment>

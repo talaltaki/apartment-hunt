@@ -1,10 +1,32 @@
-import React from 'react';
+import React, { useContext, useEffect } from 'react';
 import { Col, Row } from 'react-bootstrap';
+import { AllContext } from '../../../App';
 import MyRentResponsive from '../MyRentResponsive/MyRentResponsive';
 import Rents from '../Rents/Rents';
 import './MyRent.css';
 
 const MyRent = () => {
+    const [signedUser, setSignedUser] = useContext(AllContext);
+    const [userBooking, setUserBooking] = React.useState([]);
+
+    useEffect(() => {
+        fetch(`https://pure-inlet-20297.herokuapp.com/?email=${signedUser.email}`)
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                setUserBooking(data)
+            })
+    }, []);
+
+    // useEffect(() => {
+    //     fetch(`http://localhost:9999/?email=${signedUser.email}`)
+    //         .then(res => res.json())
+    //         .then(data => {
+    //             console.log(data);
+    //             setUserBooking(data)
+    //         })
+    // });
+
     return (
         <React.Fragment>
             <h2 className="bg-white py-3">Booking List</h2>
@@ -21,11 +43,9 @@ const MyRent = () => {
                             <h5 className="text-center">Action</h5>
                         </Col>
                     </Row>
-                    {/* here I'll map when our backend wil be ready */}
-                    <Rents />
-                </div>
-                <div className="d-block d-lg-none">
-                    <MyRentResponsive />
+                    {
+                        userBooking.map(booking => <Rents booking={booking} key={booking._id} />)
+                    }
                 </div>
             </div>
         </React.Fragment>

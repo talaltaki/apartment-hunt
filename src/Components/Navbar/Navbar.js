@@ -88,6 +88,18 @@ const Navbar = () => {
                   </button>
                 )}
             </li>
+            {
+              signedUser.uid ?
+                <li>
+                  <button
+                    className="btn common-btn ml-3"
+                    onClick={() => history.push('/dashboard')}
+                  >
+                    Dashboard
+                </button>
+                </li> :
+                null
+            }
           </ul>
         </div>
       </nav>

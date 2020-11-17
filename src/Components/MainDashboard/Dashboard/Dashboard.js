@@ -2,18 +2,24 @@ import { faHome, faPlus, faShoppingBasket } from '@fortawesome/free-solid-svg-ic
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { Col, Nav, Row, Tab } from 'react-bootstrap';
+import { useHistory } from 'react-router-dom';
 import AddRent from '../AddRent/AddRent';
 import BookingList from '../BookingList/BookingList';
 import MyRent from '../MyRent/MyRent';
 import './Dashboard.css';
 
 const Dashboard = () => {
+    const history = useHistory();
+    const logoStyle = {
+        cursor: "pointer",
+        width: "40%"
+    }
     return (
         <Tab.Container id="left-tabs-example" defaultActiveKey="add-house">
             <Row className="m-0 no-wrap">
                 <Col className="p-0" xs={1} md={2} lg={3}>
                     <div className="ml-md-5 mt-2">
-                        <img width="100vw" src="https://i.ibb.co/X8BMJsF/Logo.png" alt="logo" />
+                        <img style={logoStyle} onClick={() => history.push('/')} src="https://i.ibb.co/X8BMJsF/Logo.png" alt="logo" />
                     </div>
                     <Nav variant="pills" className="flex-column ml-lg-5 mt-lg-5">
                         <Nav.Item>

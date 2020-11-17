@@ -27,9 +27,9 @@ const App = () => {
           <Route exact path="/">
             <Home />
           </Route>
-          <Route path="/dashboard">
+          <PrivateRoute path="/dashboard">
             <Dashboard />
-          </Route>
+          </PrivateRoute>
           <PrivateRoute path="/details/:id">
             <HomeDetails />
           </PrivateRoute>
