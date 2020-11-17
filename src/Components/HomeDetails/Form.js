@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useForm } from "react-hook-form";
+import { AllContext } from "../../App";
 
 
 const Form = ({ houseInfo }) => {
@@ -7,10 +8,12 @@ const Form = ({ houseInfo }) => {
 
   const { title, price } = houseInfo;
 
+  const [signedUser, setSignedUser] = useContext(AllContext);
+
 
   const onSubmit = (data, e) => {
 
-    const bookingData = { ...data, title, price };
+    const bookingData = { ...data, title, price, status: 'Pending' };
     // console.log(bookingData);
 
     fetch(`https://pure-inlet-20297.herokuapp.com/add-bookings`, {
@@ -37,6 +40,7 @@ const Form = ({ houseInfo }) => {
           <input
             className="form-control mt-3 mb-2 rounded-0"
             type="name" name="name" ref={register({ required: true })}
+            value={signedUser.name}
             placeholder="Full Name"
           />
           {/* <br /> */}
@@ -44,7 +48,7 @@ const Form = ({ houseInfo }) => {
 
           <input
             className="form-control  mb-2 rounded-0"
-            type="text" name="phone"
+            type="tel" name="phone"
             placeholder="Phone No."
             ref={register({ required: true })}
           />
@@ -53,6 +57,7 @@ const Form = ({ houseInfo }) => {
           <input
             className="form-control mb-2 rounded-0"
             placeholder="Email Address"
+            value={signedUser.email}
             type="email" name="email" ref={register({ required: true })}
           />
           {errors.email && <span className="text-danger ">Email is required</span>}
@@ -82,43 +87,3 @@ const Form = ({ houseInfo }) => {
 };
 
 export default Form;
-
-
-// import React from "react";
-
-// const Form = () => {
-//   return (
-//     <div className="card bg-light mt-4">
-//       <div className="card-body">
-//         <input
-//           className="form-control mt-3 rounded-0"
-//           type="text"
-//           placeholder="Full Name"
-//         />
-//         <input
-//           className="form-control mt-4 rounded-0"
-//           type="text"
-//           placeholder="Phone No."
-//         />
-//         <input
-//           className="form-control mt-4 rounded-0"
-//           type="text"
-//           placeholder="Email Address"
-//         />
-//         <textarea
-//           className="form-control mt-4 rounded-0"
-//           type="text"
-//           placeholder="Message"
-//         />
-//         <button
-//           className="btn btn-lg btn-block text-white mt-4 mb-3 rounded-0"
-//           style={{ backgroundColor: "#46884D" }}
-//         >
-//           Request Booking
-//         </button>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default Form;

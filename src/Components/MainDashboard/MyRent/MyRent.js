@@ -10,7 +10,7 @@ const MyRent = () => {
     const [userBooking, setUserBooking] = React.useState([]);
 
     useEffect(() => {
-        fetch(`https://pure-inlet-20297.herokuapp.com/?email=${signedUser.email}`)
+        fetch(`http://pure-inlet-20297.herokuapp.com/booking/?email=${signedUser.email}`)
             .then(res => res.json())
             .then(data => {
                 console.log(data);
@@ -18,14 +18,6 @@ const MyRent = () => {
             })
     }, []);
 
-    // useEffect(() => {
-    //     fetch(`http://localhost:9999/?email=${signedUser.email}`)
-    //         .then(res => res.json())
-    //         .then(data => {
-    //             console.log(data);
-    //             setUserBooking(data)
-    //         })
-    // });
 
     return (
         <React.Fragment>
