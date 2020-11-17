@@ -1,0 +1,42 @@
+.form-area {
+    width: 570px;
+    border: 1px solid #275a53;
+}
+
+.form-area .signUp-input {
+    width: 95%;
+    background-color: white;
+    border: none;
+    border-bottom: 1px solid #275a53;
+    height: auto;
+    padding: 0.5rem;
+    border-radius: 0;
+}
+
+.form-area .signUp-input:focus {
+    outline: none;
+}
+
+.form-area .signUp-btn {
+    width: 95%;
+    color: #275a53;
+    border: none;
+    background-color: white;
+    border: 2px solid #275a53;
+    transition: 0.2s ease;
+}
+
+.form-area .signUp-btn:hover {
+    color: white;
+    background-color: #275a53;
+}
+
+.form-area .signUp-btn:focus {
+    outline: none;
+    box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.3);
+}
+
+.form-area span {
+    color: #275a53;
+    cursor: pointer;
+}

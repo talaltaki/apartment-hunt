@@ -2,12 +2,12 @@ import React from 'react';
 import BannerContent from '../BannerContent/BannerContent';
 import './Banner.css';
 
-const Banner = () => {
+const Banner = ({ title }) => {
     return (
         <section className="banner-main">
             <div className="banner-overly">
                 <div className="banner-content text-white text-center">
-              <BannerContent/>
+                    <BannerContent title={title} />
                 </div>
             </div>
         </section>

@@ -9,6 +9,7 @@ import firebase from "firebase/app";
 import "firebase/auth";
 import { firebaseConfig } from "./Components/Login/firebase.config";
 import HomeDetails from './Components/HomeDetails/HomeDetails';
+import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
 
 firebase.initializeApp(firebaseConfig);
 
@@ -29,9 +30,9 @@ const App = () => {
           <Route path="/dashboard">
             <Dashboard />
           </Route>
-          <Route path="/details/:id">
+          <PrivateRoute path="/details/:id">
             <HomeDetails />
-          </Route>
+          </PrivateRoute>
           <Route path="/login">
             <LoginMain />
           </Route>
